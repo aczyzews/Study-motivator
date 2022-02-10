@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styleCalendar.css') }}">
+  {#  <link href="{{ url_for('static', filename='tmp_popup.css') }}" rel="stylesheet"> #}
+  <link rel="stylesheet" href="../static/styleCalendar.css">
+  <link rel="stylesheet" href="../static/stylePopup.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script defer src="{{ url_for('static', filename='scriptPopup.js') }}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script defer src="../static/scriptPopup.js"></script>
+{#    <script defer src="{{ url_for('static', filename='scriptPopup.css') }}"></script>#}
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="nav-bar">
+      <ol>
+        <li><a href="#">My Profile</a>
+          <ul>
+            <li><a href="questionaire">Settings</a></li>
+          </ul>
+        </li>
+        <li><a href="#"> hello {{ user }}</a></li>
+        <li><a href="logout">Logout</a></li>
+      </ol>
+    </div>
+
+    <div class="current-goals">
+      <div class="header">
+        Current goals
+      </div>
+
+      <div class="category">Category</div>
+      <div class="start-date">Start date</div>
+      <div class="finish-date">Finish date</div>
+      <div class="predicted-score">Predicted score</div>
+      <div style="clear: both;"></div>
+      <div class="goal-content">
+          {% for goal in not_completed_goals %}
+
+              <div class="data"><p>{{ goal.type }}</p></div>
+               <div class="data" style="font-size: small" ><p>{{ goal.start_date }}</p></div>
+              <div class="data" data-modal-target="#end_date_modifier"  style="cursor: pointer; font-size: small"><p>{{ goal.end_date }}</p></div>
+               <div class="data" data-modal-target="#hour"  style="cursor: pointer;"><p>{{ goal.predicted_score }}%</p></div>
+        <div style="clear: both;"></div>
+
+          {% endfor %}
+
+
+        <div style="clear: both;"></div>
+
+      </div>
+
+      <button type="button" class="add-goal-button" data-modal-target="#modal">Add new goal</button>
+        <button type="button" class="add-goal-button" data-modal-target="#modal2">Delete goal</button>
+    </div>
+
+    <div class="calendar">
+
+      <div class="month">
+        <i class="fas fa-angle-left prev"></i>
+        <div class="date">
+          <h1></h1>
+          <p></p>
+        </div>
+        <i class="fas fa-angle-right next"></i>
+      </div>
+
+      <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+
+      <div class="days">
+      </div>
+
+    </div>
+
+
+    <div class="finished-goals">
+      <div class="header">
+        Finished goals
+      </div>
+      <div class="category">Category</div>
+      <div class="start-date">Start date</div>
+      <div class="finish-date">Finish date</div>
+      <div class="predicted-score">Predicted score</div>
+      <div style="clear: both;"></div>
+        <div class="goal-content">
+          {% for goal in completed_goals %}
+              <div class="data">{{ goal.type }}</div>
+               <div class="data" style="font-size: small">{{ goal.start_date }}</div>
+              <div class="data" style="font-size: small">{{ goal.end_date }}</div>
+              <div class="data">80%</div>
+
+        <div style="clear: both;"></div>
+          {% endfor %}
+
+
+    </div>
+    <div style="clear: both;"></div>
+
+  </div>
+  <script src="../static/scriptCalendar.js"></script>
+  <script  src="{{ url_for('static', filename='scriptCalendar.js') }}"></script>
+
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="title">ADD GOAL</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+
+      <label for="categories">Choose a category:</label>
+      <form method="post">
+      <select name="categories" id="categories" >
+        <option value="math">Math</option>
+        <option value="language">Language</option>
+
+      </select>
+      <br />
+      <label for="start-date">Pick start date:</label>
+      <input name="start-date" type="datetime-local"/>
+      <div style="clear:both"></div>
+      <label for="end-date">Pick end date:</label>
+      <input name="end-date" type="datetime-local"/>
+      <div style="clear:both"></div>
+      <button type="submit" value="submit_new_goal" name="submit" class="submit-button-goals">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="modal2">
+    <div class="modal-header">
+      <div class="title">DELETE GOAL</div>
+      <button data-close-button class="close-button">&times;</button>
+    </div>
+
+    <div class="modal-body">
+
+      <label for="categories">Choose a category:</label>
+      <form method="post">
+
+      <label for="start-date">Goal ID:</label>
+      <input name="goal_id" type="number"/>
+      <div style="clear:both"></div>
+
+      <div style="clear:both"></div>
+      <button type="submit" value="delete_goal" name="submit" class="submit-button-goals">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="end_date_modifier">
+      <div class="hour-header">
+          <div class="title">MODIFY STUDY HOURS</div>
+          <button data-close-button class="close-button">&times;</button>
+      </div>
+      <form method="post">
+      <div class="hour-body">
+
+          <input type="number" class="input-field" placeholder="Goalid" name="goalid" required>
+          <label for="end-date">Pick end date:</label>
+            <input name="end-date" type="datetime-local">
+          <div style="clear:both"></div>
+		  <button type="submit" value="modify_end_datetime" name="submit" class="submit-button-goals">Submit</button>
+      </div>
+      </form>
+  </div>
+
+
+  <div class="modal" id="hour">
+      <div class="hour-header">
+          <div class="title">MODIFY STUDY HOURS</div>
+          <button data-close-button class="close-button">&times;</button>
+      </div>
+      <form method="post">
+      <div class="hour-body">
+          <p>
+                 Add: <input type="number" class="input-field" placeholder="Hours" name="hour" required>
+          </p>
+          <p>
+                 Add: <input type="number" class="input-field" placeholder="Goalid" name="goalid" required>
+          </p>
+		  <button type="submit" value="add_study_hours" name="submit" class="submit-button-goals">Submit</button>
+      </div>
+      </form>
+  </div>
+
+
+
+
+  <div id="overlay"></div>
+  </div>
+</body>
+
+</html>

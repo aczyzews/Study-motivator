@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>Login</title>
+
+{#    <link rel="stylesheet" href="../static/styleLogin.css">#}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleLogin.css') }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-box">
+            <div class="header">
+                Log In
+            </div>
+
+            <form id="login" class="input-group" method="post">
+                <input type="text" class="input-field" placeholder="Enter Username" name="username" required>
+                <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Log in</button>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>

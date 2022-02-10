@@ -1,0 +1,111 @@
+﻿<html>
+<head>
+    <title>Questionaire</title>
+    <link rel="stylesheet" href="../static/questionaireStyle.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='questionaireStyle.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-box">
+            <form method="post">
+
+              <div class="header">
+                  Questionaire
+              </div>
+
+              <div class="actual-form">
+          				</p>
+
+                          <input type="number" class=" input-field" placeholder="Age" name="age"  required>
+
+          				</p>
+                  <div class="section">
+                <span>Sex:</span>
+
+                <input type="radio" name="sex" value="male"  required> Male &nbsp;
+                <input type="radio" name="sex" value="female"  required> Female
+              </div>
+
+				</p>
+
+<div class="section">
+				<span>Where do you live:</span>
+      </p>
+					<input type="radio" name="address" value="In the city"  required> In the city &nbsp;
+					<input type="radio" name="address" value="In the countryside"  required> In the countryside
+				</div>
+
+				</p>
+
+
+				</p>
+<div class="section">
+                <span>How much free time do you weekly have (in hours):</span>
+                <input type="number" class="input-field" placeholder="Hours of weekly free time..." name="freetime" required>
+</div>
+				</p>
+<div class="section">
+                <span>How often do you go out per week:</span>
+                <div id="out-info" class="input-group">
+                    <input type="radio" name="goout" value="0" required> 0 &nbsp;
+                    <input type="radio" name="goout" value="1" required> 1 &nbsp;
+                    <input type="radio" name="goout" value="2" required> 2 &nbsp;
+                    <input type="radio" name="goout" value="3" required> 3 &nbsp;
+                    <input type="radio" name="goout" value="4" required> 4 &nbsp;
+                    <input type="radio" name="goout" value="5" required> 5 &nbsp;
+                    <input type="radio" name="goout" value="6" required> 6 &nbsp;
+                    <input type="radio" name="goout" value="7" required> 7
+                </div>
+</div>
+				</p>
+<div class="section">
+                <span>How do you rate your health:</span>
+                <div id="heath-info" class="input-group">
+                    <input type="radio" name="health-rate" value="1" required> 1 &nbsp;
+                    <input type="radio" name="health-rate" value="2" required> 2 &nbsp;
+                    <input type="radio" name="health-rate" value="3" required> 3 &nbsp;
+                    <input type="radio" name="health-rate" value="4" required> 4 &nbsp;
+                    <input type="radio" name="health-rate" value="5" required> 5
+                </div>
+</div>
+				</p>
+<div class="section">
+                <span>Are you physically active:</span>
+                <div id="physical-state" class="input-group">
+                    <input type="radio" name="physical-state" value="yes" required> Yes &nbsp;
+                    <input type="radio" name="physical-state" value="no" required> No
+                </div>
+</div>
+				</p>
+<div class="section">
+                <span>How would you rate the amount of drunk alcohol from Monday to Thursday:</span>
+                <div id="alcohol-week" class="input-group">
+                    <input type="radio" name="alcohol-week" value="1" required> 1 &nbsp;
+                    <input type="radio" name="alcohol-week" value="2" required> 2 &nbsp;
+                    <input type="radio" name="alcohol-week" value="3" required> 3 &nbsp;
+                    <input type="radio" name="alcohol-week" value="4" required> 4 &nbsp;
+                    <input type="radio" name="alcohol-week" value="5" required> 5
+                </div>
+</div>
+				</p>
+<div class="section">
+                <span>How would you rate the amount of drunk alcohol at weekend:</span>
+                <div id="alcohol-weekend" class="input-group">
+                    <input type="radio" name="alcohol-weekend" value="1" required> 1 &nbsp;
+                    <input type="radio" name="alcohol-weekend" value="2" required> 2 &nbsp;
+                    <input type="radio" name="alcohol-weekend" value="3" required> 3 &nbsp;
+                    <input type="radio" name="alcohol-weekend" value="4" required> 4 &nbsp;
+                    <input type="radio" name="alcohol-weekend" value="5" required> 5 
+                </div>
+</div>
+				</p>
+      </div>
+
+                <button type="submit" class="submit-btn" tabindex="4">Submit</button>
+			</form>
+        </div>
+    </div>
+</body>
+</html>

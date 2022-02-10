@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{#    <link rel="stylesheet" href="../static/styleIndex.css">#}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleIndex.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Home page</title>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    Will you <span style="color: #167e56">pass</span>?
+  </div>
+  <div class="buttons">
+    <a href="{{ url_for('auth.login') }}"><div id="login">LOGIN</div></a>
+    <a href="{{ url_for('auth.register') }}"><div id="register">REGISTER</div></a>
+  </div>
+</div>
+</body>
+</html>

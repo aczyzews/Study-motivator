@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #12121f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  font-size: 150px;
+  width: 380px;
+}
+
+#login {
+  position: fixed;
+  left: 200px;
+  top: center;
+  background-color: #222227;
+  width: 220px;
+  height: 80px;
+  text-align: center;
+  font-size: 60px;
+}
+
+#register {
+  position: fixed;
+  right: 150px;
+  top: center;
+  background-color: #222227;
+  width: 320px;
+  height: 80px;
+  text-align: center;
+  font-size: 60px;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: #167e56;
+}

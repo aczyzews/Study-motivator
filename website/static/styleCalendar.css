@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html {
+  font-size: 52.5%;
+}
+
+.container {
+  background-color: #12121f;
+  color: #eee;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 3.1rem;
+  background-color: #167e56;
+  text-align: center;
+  position: fixed;
+  top: 0;
+}
+
+ol {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: .5rem;
+  margin-left: .5rem;
+  list-style-type: none;
+  font-size: 2.5rem;
+  display: inline-block;
+}
+
+ol a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+ol>li {
+  float: left;
+  width: 20rem;
+}
+
+ol>li>a:hover {
+  color: white;
+  background-color: #056d45;
+}
+
+ol>li>ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+ol>li:hover>ul {
+  display: block;
+}
+
+ol>li>ul>li {
+  background-color: #167e56;
+  position: relative;
+  z-index: 100;
+}
+
+ol>li>ul>li>a:hover {
+  color: white;
+  background-color: #056d45;
+}
+
+.calendar {
+  width: 45rem;
+  height: 52rem;
+  background-color: #222227;
+  box-shadow: 1rem 2.5rem rgba(0, 0, 0, 0.4);
+  float: left;
+  margin-top: 120px;
+}
+
+.current-goals {
+  float: left;
+  background-color: #222227;
+  box-shadow: 1rem 2.5rem rgba(0, 0, 0, 0.4);
+  height: 600px;
+  width: 400px;
+  margin-top: 70px;
+  margin-left: 55px;
+  margin-right: 75px;
+}
+
+.category {
+  float: left;
+  width: 80px;
+  height: 50px;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+
+.goal-content {
+  overflow: auto;
+  height: 350px;
+  width: 400px;
+  margin-right: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.add-goal-button {
+  margin-left: 120px;
+  margin-top: 29px;
+  font-size: 25px;
+  padding: 5px;
+  background-color: #167e56;
+  border: none;
+  color: white;
+  cursor: pointer;
+  /*text-shadow: .3 rem .5re, rgba(0, 0, 0, 0.5);*/
+}
+
+.add-goal-button:hover {
+  background-color: #056d45;
+}
+
+.submit-button-goals {
+  margin-left: 80px;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.start-date {
+  float: left;
+  width: 80px;
+  height: 50px;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.finish-date {
+  float: left;
+  width: 80px;
+  height: 50px;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.predicted-score {
+  float: left;
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.data {
+  float: left;
+  width: 80px;
+  height: 30px;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
+  text-align: center;
+  font-weight: normal;
+}
+
+.finished-goals {
+  float: left;
+  background-color: #222227;
+  box-shadow: 1rem 2.5rem rgba(0, 0, 0, 0.4);
+  height: 600px;
+  width: 400px;
+  margin-top: 70px;
+  margin-left: 75px;
+}
+
+.header {
+  text-align: center;
+  font-size: 30px;
+  padding: 30px;
+  background-color: #167e56;
+  width: 400px;
+  height: 95px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.column-names {
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  height: 50px;
+  width: 100px;
+}
+
+.fields {
+  position: fixed;
+  top: 250px;
+  left: 25px;
+}
+
+.category-input {
+  height: 60px;
+  width: 100px;
+  float: left;
+  margin-left: 38px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.month {
+  width: 100%;
+  height: 12rem;
+  background-color: #167e56;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+  /*text-shadow: .3 rem .5re, rgba(0, 0, 0, 0.5);*/
+}
+
+.month i {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  margin-bottom: 1rem;
+}
+
+.month p {
+  font-size: 1.6rem;
+}
+
+.weekdays {
+  width: 100%;
+  height: 5rem;
+  padding: 0 .4rem;
+  display: flex;
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: .1rem;
+  width: calc(44.2rem/7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.5);
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: .2rem;
+}
+
+.days div {
+  font-size: 1.4rem;
+  margin: .3rem;
+  width: calc(40.2rem/7);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.5);
+  transition: background-color .2s;
+}
+
+.days div:hover:not(.today) {
+  background-color: #262626;
+  border: .2rem solid #777;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: .5;
+}
+
+.today {
+  background-color: #167e56;
+  cursor: pointer;
+}
+
+input, select {
+  height: 20px;
+}
+
+.info {
+  float: left;
+}
+
+.start-date-1 {
+  height: 20px;
+  float: left;
+}
+
+.hour-body {
+	font-size: 220px;
+}

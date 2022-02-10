@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Registration</title>
+{#    <link rel="stylesheet" href="../static/styleRegister.css">#}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleRegister.css') }}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-box">
+          <div class="header">
+              Register
+          </div>
+            <form id="register" class="input-group" method="post" >
+                <input type="text" class=" input-field" placeholder="Enter Username" required name="Rusername">
+                <input type="text" class=" input-field" placeholder="Enter Name" required name="Rname">
+                <input type="text" class=" input-field" placeholder="Enter Surname" required name="Rsurname">
+{#                <input type="email" class=" input-field" placeholder="Enter Email" required>#}
+                <input type="text" class=" input-field" placeholder="Enter Password" required name="Rpassword">
+{#                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>#}
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
